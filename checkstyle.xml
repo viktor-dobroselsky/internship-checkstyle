@@ -109,6 +109,12 @@
             <property name="protectedAllowed" value="true"/>
         </module>
 
+        <!-- Disables modifier visibility check for fields of @Value classes -->
+        <module name="SuppressionXpathSingleFilter">
+            <property name="checks" value="VisibilityModifier"/>
+            <property name="query" value="//*[MODIFIERS//*[@text = 'Value']]/descendant-or-self::node()"/>
+        </module>
+
         <!-- Miscellaneous other checks.                   -->
         <!-- See https://checkstyle.org/config_misc.html -->
         <module name="ArrayTypeStyle"/>
